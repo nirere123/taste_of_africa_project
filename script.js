@@ -13,10 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', t); applyTheme(t);
   });
 
-  // 2. Image fallback: show a styled placeholder with the alt text if an image is missing
-  $$('img').forEach(img => img.addEventListener('error', () => {
-    const d = document.createElement('div'); d.className = 'ph'; d.textContent = img.alt; img.replaceWith(d);
-  }));
+  // 2. Image fallback: if an image fails, try other likely file names (e.g. tagine/tangine, .jpg.png/.png/.jpg),
+  //    and only then show a styled placeholder with the alt text.
+  const exts = ['.jpg.png', '.png', '.jpg', '.jpeg', '.webp'];
+  const spellings = ['tangine', 'tagine', 'tajine', 'Tangine', 'Tagine'];
+  $$('img').forEach(img => {
+    const isTagine = /t[a-z]*gine\./i.test(img.getAttribute('src') || '');
+    const tries = isTagine ? spellings.flatMap(n => exts.map(e => 'images/' + n + e)) : [];
+    let i = 0;
+    img.addEventListener('error', () => {
+      if (i < tries.length) { img.src = tries[i++]; return; }
+      const d = document.createElement('div'); d.className = 'ph'; d.textContent = img.alt; img.replaceWith(d);
+    });
+  });
 
   // 3. Recipe filter by region (data-region attributes)
   const filters = $$('.filter');
