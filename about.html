@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Taste of Africa: a celebration of African cuisine.">
+<title>About Us | Taste of Africa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html">Taste<span>of</span>Africa</a>
+  <nav aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="recipes.html">Recipes</a></li><li><a href="west-africa.html">West</a></li><li><a href="east-africa.html">East</a></li><li><a href="north-africa.html">North</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  <button id="themeToggle" class="icon-btn" aria-label="Toggle dark and light mode">🌙</button>
+</header>
+<main>
+<section class="wrap"><h1>About Us</h1>
+<blockquote class="mission">Our mission is to promote and preserve African food heritage by sharing recipes, stories and the people behind them.</blockquote>
+<h2>A short history of African cuisine</h2>
+<p>African cooking is built on millennia of farming, trade and migration. Indigenous crops such as <mark>sorghum</mark>, millet, yam and teff were joined by spices from Indian Ocean trade, and later by ingredients like tomatoes, chillies and maize.</p>
+<p>Today, African dishes travel the world with diaspora communities, influencing restaurants from London to New York.</p>
+<h2>Visit a food landmark: Jemaa el-Fnaa, Marrakech</h2><div class="video map"><iframe src="https://www.google.com/maps?q=Jemaa+el-Fnaa,+Marrakech&output=embed" title="Map of Jemaa el-Fnaa food market" loading="lazy"></iframe></div></section>
+</main>
+<footer class="site-footer">
+  <div>
+    <h2>Taste of Africa</h2>
+    <p>Celebrating African food heritage, one recipe at a time.</p>
+  </div>
+  <form id="newsletterForm" novalidate>
+    <label for="nlEmail">Join our newsletter</label>
+    <div class="row"><input type="email" id="nlEmail" placeholder="you@example.com" required><button class="btn" type="submit">Subscribe</button></div>
+    <p id="nlMsg" role="status"></p>
+  </form>
+  <p class="copy">© 2026 Taste of Africa. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

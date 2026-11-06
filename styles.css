@@ -1,0 +1,70 @@
+/* Taste of Africa - palette: black, purple, gold, white */
+:root{--black:#0d0d0d;--purple:#5b2a86;--purple-l:#7b3fb3;--gold:#d4a017;--white:#fff;
+--bg:#fff;--text:#1c1c1c;--card:#fff;--alt:#f5effa;--shadow:0 4px 14px rgba(0,0,0,.15)}
+[data-theme="dark"]{--bg:#0d0d0d;--text:#f2f2f2;--card:#1a1226;--alt:#150d1f}
+*{box-sizing:border-box}
+html{font-size:100%}
+body{margin:0;font-family:'Poppins',sans-serif;line-height:1.7;background:var(--bg);color:var(--text);transition:background .3s,color .3s}
+h1,h2,h3,.logo{font-family:'Playfair Display',serif;line-height:1.2}
+h1{font-size:clamp(2rem,5vw,3.2rem);color:var(--purple-l)}
+h2{font-size:clamp(1.5rem,3vw,2rem);border-left:5px solid var(--gold);padding-left:.6rem;margin-top:2rem}
+a{color:var(--purple-l)}
+img{max-width:100%;height:auto;display:block}
+mark{background:var(--gold);color:var(--black);padding:0 .3em;border-radius:3px;font-weight:600}
+.hidden{display:none!important}
+/* header / nav */
+.site-header{background:var(--black);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;padding:.8rem 5%;position:sticky;top:0;z-index:10;border-bottom:3px solid var(--gold)}
+.logo{color:var(--white);font-size:1.5rem;font-weight:900;text-decoration:none}.logo span{color:var(--gold);margin:0 .15em}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:.3rem;margin:0;padding:0}
+nav a{color:var(--white);text-decoration:none;padding:.4rem .8rem;border-radius:6px;font-weight:500;transition:.2s}
+nav a:hover,nav a[aria-current]{background:var(--purple);color:var(--gold);text-decoration:underline}
+.icon-btn{background:var(--purple);color:#fff;border:0;border-radius:50%;width:2.2rem;height:2.2rem;cursor:pointer;font-size:1rem}
+.icon-btn:hover{background:var(--gold);color:#000}
+/* layout */
+.wrap{max-width:1100px;margin:0 auto;padding:2rem 5%}.narrow{max-width:650px}
+.alt{max-width:none;background:var(--alt)}.alt>*{max-width:1100px;margin-inline:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:1rem;transition:transform .25s;border-top:4px solid var(--purple)}
+.card:hover{transform:translateY(-6px)}
+.card figure{margin:0 0 .6rem}.card img,.ph{border-radius:10px;height:180px;width:100%;object-fit:cover}
+figcaption{font-size:.9rem;margin-top:.4rem}
+.ph{background:linear-gradient(135deg,var(--purple),var(--black));color:var(--gold);display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;font-weight:600}
+.card-actions{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.region-tile{display:block;background:linear-gradient(135deg,var(--purple),var(--black));color:#fff;padding:1.5rem;border-radius:14px;text-decoration:none;box-shadow:var(--shadow);transition:.25s}
+.region-tile:hover{transform:scale(1.03);outline:3px solid var(--gold)}.region-tile h3{color:var(--gold);margin:0}
+/* hero */
+.hero{background:linear-gradient(rgba(13,13,13,.75),rgba(91,42,134,.7)),url('images/hero.png') center/cover,var(--black);color:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;align-items:center;padding:4rem 5%;min-height:70vh}
+.hero h1{color:var(--gold);font-size:clamp(2.5rem,7vw,4.5rem);margin:0}.hero p{font-size:1.2rem}
+.video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:3px solid var(--gold)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* buttons / filters */
+.btn,.filter,.fav{font-family:inherit;border:0;border-radius:30px;padding:.5rem 1.2rem;cursor:pointer;text-decoration:none;font-weight:600;background:var(--purple);color:#fff;display:inline-block;transition:.2s}
+.btn:hover,.filter:hover{background:var(--gold);color:#000}.btn.gold{background:var(--gold);color:#000}.btn.gold:hover{background:#fff}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.filter{background:transparent;color:var(--purple-l);border:2px solid var(--purple)}.filter.active{background:var(--purple);color:#fff}
+.fav{background:transparent;border:2px solid var(--gold);color:var(--text);filter:grayscale(1)}
+.fav.on{filter:none;background:#e11d48;border-color:#e11d48;color:#fff}
+/* recipe */
+.recipe img{border-radius:14px;max-height:420px;width:100%;object-fit:cover}
+.scaler{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.ingredients li{padding:.2rem 0}.ingredients .q{font-weight:700;color:var(--purple-l)}
+details{background:var(--alt);border-radius:10px;padding:1rem}summary{cursor:pointer;font-weight:600;color:var(--purple-l)}
+table{border-collapse:collapse;width:100%;box-shadow:var(--shadow)}th{background:var(--purple);color:#fff}th,td{padding:.7rem;text-align:center;border:1px solid var(--gold)}
+.mission{font-family:'Playfair Display',serif;font-size:1.4rem;background:var(--alt);border-left:6px solid var(--gold);margin:1rem 0;padding:1.2rem 1.5rem;border-radius:8px}
+.lead{font-size:1.15rem}
+/* forms */
+form label{display:block;font-weight:600;margin:1rem 0 .3rem}
+input,select,textarea{width:100%;padding:.7rem;border:2px solid #bbb;border-radius:8px;font:inherit;background:var(--card);color:var(--text)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,160,23,.35)}
+.error{color:#e11d48;font-weight:600;min-height:1.5rem}
+.thanks{background:var(--purple);color:#fff;padding:1.5rem;border-radius:12px;font-size:1.2rem;border:3px solid var(--gold)}
+/* footer */
+.site-footer{background:var(--black);color:#fff;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;padding:2rem 5%;border-top:3px solid var(--gold)}
+.site-footer h2{color:var(--gold);border:0;padding:0;margin:0}
+.site-footer .row{display:flex;gap:.5rem}.site-footer input{border-color:var(--purple)}.site-footer #nlMsg{color:var(--gold);margin:.3rem 0}
+.copy{width:100%;text-align:center;font-size:.85rem;color:#aaa;margin:0}
+@media(max-width:600px){.site-header{justify-content:center}.hero{padding:2rem 5%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.fade{animation:fade .6s ease both}@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+.yt-link{margin:.5rem 0 0;font-size:.95rem}.yt-link a{color:var(--gold);font-weight:600}
